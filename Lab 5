@@ -1,0 +1,90 @@
+//Janete Amacosta & Samantha Arias
+//CPSC 121 Lab 5
+//03-11-18
+#include<iostream>
+using namespace std;
+int main() {
+	char choice, answer;
+	const int n = 5;
+	int num[n];
+
+	cout << "Input 5 integers: ";	//User inputs 5 integers
+	cin >> num[0];
+	cin >> num[1];
+	cin >> num[2];
+	cin >> num[3];
+	cin >> num[4];
+
+	do {
+		//Display Menu
+		cout << "-------Menu-------\n";
+		cout << "1. Sum\n";
+		cout << "2. Mean\n";
+		cout << "3. Display values\n";
+		cout << "4. Sequence\n";
+		cout << "Select one of the following: ";
+		cin >> choice;
+
+		switch (choice) 
+		{
+		case '1':	//user chose sum
+			cout << "You picked sum \n";
+			int sum_total;
+			sum_total = (num[0] + num[1] + num[2] + num[3] + num[4]);
+			cout << "Your sum is " << sum_total << endl;
+			break;
+
+		case '2':	//user chose mean
+			cout << "You picked mean\n";
+			int mean_total;
+			mean_total = (num[0] + num[1] + num[2] + num[3] + num[4]) / 5;
+			cout << "Your mean is " << mean_total << endl;
+			break;
+
+		case '3':
+			cout << "You picked display values\n";
+			//Display value
+			cout << " " << num[0];
+			cout << " " << num[1];
+			cout << " " << num[2];
+			cout << " " << num[3];
+			cout << " " << num[4]<<endl;
+			break;
+
+		case '4':	//user chose sequence
+			cout << "You picked sequence\n";
+			cout << " " << num[0] << " "<<  num[1]<< " "<<num[2]<<" "<< num[3]<<" "<< num[4] << endl;
+			//sort in order
+			void selectionSort(int num[], int n);
+			{
+				int i, k, minvalue;
+				for (i = 0; i < ('n' - 1); i++) {
+					k = i;
+					minvalue = num[i];
+					for (int index = i + 1; index < 'n'; index++)
+					{
+						if (num[index] < minvalue) {
+							minvalue = num[index];
+							k = index;
+						}
+					}
+				}
+
+			}
+
+			break;
+
+		default:
+			cout << "Invalid selection \n";	//user did not chose any of the following
+			break;
+		}
+
+		cout << "Would you like to run the program again (Y/N)? ";
+		cin >> answer;
+
+	} while (answer != 'N' && answer != 'n');
+
+
+	system("pause");
+	return 0;
+}
